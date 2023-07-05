@@ -1,6 +1,7 @@
 package ru.lysanov.secondCourseWorkUPD;
 
 import org.springframework.stereotype.Service;
+import ru.lysanov.secondCourseWorkUPD.Exceptions.BadRequestException;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,6 +20,10 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     @Override
     public Collection<Question> getQuestions(int amount) {
+        Collection<Question> allQuestions = questionService.getAll();
+        if (allQuestions.size() < amount) {
+            throw new BadRequestException();
+        }
         Set<Question> questionsForExam = new HashSet<>();
         while (questionsForExam.size() < amount) {
             Question random = questionService.getRandomQuestion();

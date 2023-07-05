@@ -13,7 +13,7 @@ public class JavaQuestionService implements QuestionService {
     Set<Question> questions;
 
     public JavaQuestionService() {
-        this.questions = new HashSet<Question>();
+        this.questions = new HashSet<>();
     }
 // TODO убрать возможность добавления разных ответов на одинаковые вопросы
     @Override
