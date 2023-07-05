@@ -72,4 +72,5 @@ public class JavaQuestionServiceTest {
         Question result = out.getRandomQuestion();
         assertEquals(expectedValue, result);
     }
+//    тк тут используется рандом то проверяю на выпадание рандома из сета одного значения
 }
