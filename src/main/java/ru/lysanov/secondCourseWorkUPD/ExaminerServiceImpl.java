@@ -3,7 +3,9 @@ package ru.lysanov.secondCourseWorkUPD;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
@@ -17,6 +19,11 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     @Override
     public Collection<Question> getQuestions(int amount) {
-        return null;
+        Set<Question> questionsForExam = new HashSet<>();
+        while (questionsForExam.size() < amount) {
+            Question random = questionService.getRandomQuestion();
+            questionsForExam.add(random);
+        }
+        return questionsForExam;
     }
 }
