@@ -9,7 +9,7 @@ import java.util.Collection;
 @RestController
 public class ExamController {
 
-    ExaminerService service;
+    private final ExaminerService service;
 
     public ExamController(ExaminerService service) {
         this.service = service;

@@ -12,10 +12,12 @@ public class JavaQuestionService implements QuestionService {
 
     Set<Question> questions;
 
-    public JavaQuestionService() {
-        this.questions = new HashSet<Question>();
-    }
+    Random random = new Random();
 
+    public JavaQuestionService() {
+        this.questions = new HashSet<>();
+    }
+// TODO убрать возможность добавления разных ответов на одинаковые вопросы
     @Override
     public Question add(String question, String answer) {
         Question newQuestion = new Question(question, answer);
@@ -42,8 +44,7 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question getRandomQuestion() {
-        Random random = new Random();
-        int randomID = random.nextInt(questions.size() + 1);
+        int randomID = random.nextInt(questions.size());
         return (Question) questions.toArray()[randomID];
     }
 }

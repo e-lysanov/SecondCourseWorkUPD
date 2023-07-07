@@ -11,7 +11,7 @@ import java.util.Collection;
 @RestController
 public class JavaQuestionController {
 
-    QuestionService service;
+    private final QuestionService service;
 
     public JavaQuestionController(QuestionService service) {
         this.service = service;
