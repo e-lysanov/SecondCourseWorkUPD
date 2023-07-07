@@ -12,6 +12,8 @@ public class JavaQuestionService implements QuestionService {
 
     Set<Question> questions;
 
+    Random random;
+
     public JavaQuestionService() {
         this.questions = new HashSet<>();
     }
@@ -42,7 +44,6 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question getRandomQuestion() {
-        Random random = new Random();
         int randomID = random.nextInt(questions.size());
         return (Question) questions.toArray()[randomID];
     }
