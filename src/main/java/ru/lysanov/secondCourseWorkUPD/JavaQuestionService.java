@@ -12,7 +12,7 @@ public class JavaQuestionService implements QuestionService {
 
     Set<Question> questions;
 
-    Random random;
+    Random random = new Random();
 
     public JavaQuestionService() {
         this.questions = new HashSet<>();
