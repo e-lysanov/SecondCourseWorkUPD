@@ -10,9 +10,7 @@ import java.util.Set;
 
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
-    Random random;
-
-    QuestionService questionService;
+    private final QuestionService questionService;
 
     ExaminerServiceImpl(QuestionService questionService) {
         this.questionService = questionService;

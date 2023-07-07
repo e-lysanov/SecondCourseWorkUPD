@@ -3,9 +3,9 @@ package ru.lysanov.secondCourseWorkUPD;
 import java.util.Objects;
 
 public class Question {
-    String question;
+    public String question;
 
-    String answer;
+    public String answer;
 
     public Question(String question, String answer) {
         this.question = question;
